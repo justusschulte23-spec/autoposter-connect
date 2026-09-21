@@ -1,16 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Autoposter Connect</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autoposter Connect — scheduled publishing for your own TikTok account</title>
+<meta name="description" content="Autoposter Connect publishes short-form videos to the account owner's own TikTok profile, at a time they choose, with the visibility and disclosure settings they set themselves.">
+<style>
+  :root{
+    --ink:#15161a; --muted:#5d6472; --line:#e3e5ea; --bg:#ffffff;
+    --soft:#f6f7f9; --accent:#1f6feb;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);padding-block:28px 26px}
+  .brand{font-weight:700;letter-spacing:-.01em;font-size:18px}
+  h1{font-size:30px;line-height:1.25;letter-spacing:-.02em;margin:22px 0 10px}
+  .lede{font-size:18px;color:var(--muted);margin:0}
+  h2{font-size:20px;letter-spacing:-.01em;margin:38px 0 8px}
+  h3{font-size:16px;margin:22px 0 4px}
+  p,li{color:var(--ink)}
+  .muted{color:var(--muted)}
+  ul{padding-left:1.15rem}
+  li{margin:6px 0}
+  .card{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:14px 0}
+  .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:14px 0}
+  .grid .card{margin:0}
+  .card b{display:block;margin-bottom:4px}
+  footer{border-top:1px solid var(--line);margin-top:48px;padding-block:22px 40px;color:var(--muted);font-size:14px}
+  a{color:var(--accent)}
+  code{background:var(--soft);border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:14px}
+</style>
 </head>
 <body>
-  <h1>Autoposter Connect</h1>
-  <p>This service connects your TikTok account to enable automated posting.</p>
+<header>
+  <div class="wrap">
+    <div class="brand">Autoposter Connect</div>
+    <h1>Scheduled publishing to your own TikTok account.</h1>
+    <p class="lede">Autoposter Connect is a business tool for independent professionals who produce short-form video. It publishes finished videos to the account owner's own TikTok profile, at a time they choose, with the visibility and disclosure settings they set themselves.</p>
+  </div>
+</header>
 
+<main class="wrap">
+
+  <h2>What the service does</h2>
+  <div class="grid">
+    <div class="card"><b>Record</b>Users record short videos themselves, with a phone or a webcam, guided by a teleprompter.</div>
+    <div class="card"><b>Finish</b>The recording is cut, captioned and set in the user's own brand colours. The user previews the result before anything is published.</div>
+    <div class="card"><b>Publish</b>Once the user has connected their TikTok account, approved videos are published to that account at the time the user configured.</div>
+    <div class="card"><b>Measure</b>24 hours and 7 days after publishing, the service reads back views, likes, comments and shares for those videos.</div>
+  </div>
+
+  <h2>How Autoposter Connect uses the TikTok API</h2>
+  <p>Every account belongs to the user, never to us. The official TikTok APIs are used only to publish that user's own videos to that user's own profile, and to read back how those videos performed.</p>
+
+  <h3>Login Kit</h3>
+  <p>The user signs in at TikTok directly. We never see, receive or store a TikTok password. The resulting access token is stored encrypted and is deleted the moment the user disconnects the account, either in our app or in the TikTok app itself.</p>
+
+  <h3>Content Posting API</h3>
+  <p>Videos are transferred with <code>FILE_UPLOAD</code>; we do not pull content from a URL. Before the first publication the user chooses, in our interface:</p>
   <ul>
-    <li><a href="/privacy.html">Privacy Policy</a></li>
-    <li><a href="/terms.html">Terms of Service</a></li>
+    <li>who may see the videos, from the privacy levels the account actually allows;</li>
+    <li>whether comments, Duet and Stitch are permitted, offered only where the account permits them;</li>
+    <li>whether the content promotes the user's own brand, or is a paid partnership with another brand.</li>
   </ul>
+  <p>These choices are shown again on the screen where the user confirms, together with TikTok's <a href="https://www.tiktok.com/legal/page/global/music-usage-confirmation/en" target="_blank" rel="noopener">Music Usage Confirmation</a> and, for branded content, TikTok's <a href="https://www.tiktok.com/legal/page/global/bc-policy/en" target="_blank" rel="noopener">Branded Content Policy</a>. Branded content cannot be set to "Only me", in line with TikTok's rules.</p>
+
+  <h3>Creator info</h3>
+  <p>Before each publication the service reads the creator's current settings from TikTok and offers only the options that this account allows at that moment. Options the account has switched off are not offered, and the maximum video duration reported by TikTok is respected.</p>
+
+  <h3>Metrics</h3>
+  <p>After publication the service reads views, likes, comments and shares for the videos it posted, so the user can see which topics work. No data about other TikTok users is collected, stored or analysed.</p>
+
+  <h2>Control and deletion</h2>
+  <div class="card">
+    <p style="margin:0">Users can disconnect their TikTok account at any time, in our app or in the TikTok settings. Disconnecting deletes the stored access token immediately. Recordings, scripts and finished videos are deleted when the contract ends, or earlier on request. Requests for access, correction or deletion go to <a href="mailto:admin@autoposter-connect.com">admin@autoposter-connect.com</a>.</p>
+  </div>
+
+  <h2>Who it is for</h2>
+  <p>Independent professionals and owner-run businesses: advisers, consultants, coaches, estate agents, craft businesses, law firms and agencies. The service is offered business to business. It is not aimed at consumers and not at anyone under 18.</p>
+
+  <h2>Provider</h2>
+  <div class="card">
+    <p style="margin:0">Schulten Solutions<br>
+    Hans-Justus Schulte<br>
+    Piepenborn 19, 33039 Nieheim, Germany<br>
+    <a href="mailto:admin@autoposter-connect.com">admin@autoposter-connect.com</a></p>
+  </div>
+
+</main>
+
+<footer class="wrap">
+  <p><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms of Service</a></p>
+  <p>© 2026 Schulten Solutions. Autoposter Connect is an independent product and is not affiliated with, endorsed by or sponsored by TikTok.</p>
+</footer>
 </body>
 </html>
